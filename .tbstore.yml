@@ -1,0 +1,13 @@
+module_name: Block Search
+compatible_versions: 1.0.0+
+author: thirty bees
+category: front office
+tags:
+  - search
+  - search engine
+  - searching
+description_short: The block search module adds the search bar at the top of your site.
+description: description.md
+images:
+  - image-1.png
+license: AFL
