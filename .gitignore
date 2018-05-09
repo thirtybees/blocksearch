@@ -1,0 +1,7 @@
+
+/translations/*
+!/translations/index.php
+
+/config*.xml
+
+blocksearch-*.zip
