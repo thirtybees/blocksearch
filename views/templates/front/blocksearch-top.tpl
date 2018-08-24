@@ -46,6 +46,6 @@
 		</p>
 	</form>
 </div>
-{include file="$self/blocksearch-instantsearch.tpl"}
+{include file="$self/views/templates/front/blocksearch-instantsearch.tpl"}
 {/if}
 <!-- /Block search module TOP -->
