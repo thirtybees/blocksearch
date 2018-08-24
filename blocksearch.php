@@ -69,7 +69,7 @@ public function hookDisplayMobileHeader($params)
 
 	public function hookHeader($params)
 	{
-		$this->context->controller->addCSS(($this->_path).'blocksearch.css', 'all');
+		$this->context->controller->addCSS(($this->_path).'css/blocksearch.css', 'all');
 
 		if (Configuration::get('PS_SEARCH_AJAX'))
 			$this->context->controller->addJqueryPlugin('autocomplete');
@@ -80,7 +80,7 @@ public function hookDisplayMobileHeader($params)
 		if (Configuration::get('PS_SEARCH_AJAX') || Configuration::get('PS_INSTANT_SEARCH'))
 		{
 			Media::addJsDef(array('search_url' => $this->context->link->getPageLink('search', Tools::usingSecureMode())));
-			$this->context->controller->addJS(($this->_path).'blocksearch.js');
+			$this->context->controller->addJS(($this->_path).'js/blocksearch.js');
 		}
 	}
 
@@ -91,7 +91,7 @@ public function hookDisplayMobileHeader($params)
 
 	public function hookRightColumn($params)
 	{
-		if (Tools::getValue('search_query') || !$this->isCached('blocksearch.tpl', $this->getCacheId()))
+		if (Tools::getValue('search_query') || !$this->isCached('views/templates/front/blocksearch.tpl', $this->getCacheId()))
 		{
 			$this->calculHookCommon($params);
 			$this->smarty->assign(array(
@@ -101,13 +101,13 @@ public function hookDisplayMobileHeader($params)
 			);
 		}
 		Media::addJsDef(array('blocksearch_type' => 'block'));
-		return $this->display(__FILE__, 'blocksearch.tpl', Tools::getValue('search_query') ? null : $this->getCacheId());
+		return $this->display(__FILE__, 'views/templates/front/blocksearch.tpl', Tools::getValue('search_query') ? null : $this->getCacheId());
 	}
 
 	public function hookTop($params)
 	{
 		$key = $this->getCacheId('blocksearch-top'.((!isset($params['hook_mobile']) || !$params['hook_mobile']) ? '' : '-hook_mobile'));
-		if (Tools::getValue('search_query') || !$this->isCached('blocksearch-top.tpl', $key))
+		if (Tools::getValue('search_query') || !$this->isCached('views/templates/front/blocksearch-top.tpl', $key))
 		{
 			$this->calculHookCommon($params);
 			$this->smarty->assign(array(
@@ -117,7 +117,7 @@ public function hookDisplayMobileHeader($params)
 			);
 		}
 		Media::addJsDef(array('blocksearch_type' => 'top'));
-		return $this->display(__FILE__, 'blocksearch-top.tpl', Tools::getValue('search_query') ? null : $key);
+		return $this->display(__FILE__, 'views/templates/front/blocksearch-top.tpl', Tools::getValue('search_query') ? null : $key);
 	}
 
 	public function hookDisplayNav($params)
