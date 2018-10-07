@@ -6,6 +6,7 @@ tags:
   - search
   - search engine
   - searching
+  - blocksearch
 description_short: The block search module adds the search bar at the top of your site.
 description: description.md
 images:
