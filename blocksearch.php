@@ -32,7 +32,7 @@ class BlockSearch extends Module
 	{
 		$this->name = 'blocksearch';
 		$this->tab = 'search_filter';
-		$this->version = '2.0.1';
+		$this->version = '2.0.2';
 		$this->author = 'thirty bees';
 		$this->need_instance = 0;
 
